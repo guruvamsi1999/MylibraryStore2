@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <h1>List of Books</h1>
+@if (Model.Count() == 0)
+{
+    <h2>No Books</h2>
+}
+    <ul class="list-group">
+        @foreach (var b in Model)
+        {
+        <li class="list-group-item">
+            <a asp-action="Details" asp-controller="Books" asp-route-id="@b.id">@b.BookName</a>
+         
+        </li>
+        }
+    </ul>
+
+
+
+
